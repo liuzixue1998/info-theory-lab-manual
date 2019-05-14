@@ -1,0 +1,369 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>实验五、串联信道容量曲线 · 实验手册</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="王顶">
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-books/bootstrap.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-books/stype.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-books/lightbox.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-books/katex/dist/katex.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-books/prismjs/themes/prism.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="lab06.html" />
+    
+    
+    <link rel="prev" href="lab04.html" />
+    
+
+    <style>
+    @media only screen and (max-width: 640px) {
+        .book-header .hidden-mobile {
+            display: none;
+        }
+    }
+    </style>
+    <script>
+        window["gitbook-plugin-github-buttons"] = {"repo":"wangding/info-theory-lab-manual","types":["star"],"size":"small"};
+    </script>
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    前言
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="lab01.html">
+            
+                <a href="lab01.html">
+            
+                    
+                    实验一、自信息量函数曲线
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="lab02.html">
+            
+                <a href="lab02.html">
+            
+                    
+                    实验二、熵函数曲线
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="lab03.html">
+            
+                <a href="lab03.html">
+            
+                    
+                    实验三、数学之美
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="lab04.html">
+            
+                <a href="lab04.html">
+            
+                    
+                    实验四、BSC 信道仿真
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.6" data-path="lab05.html">
+            
+                <a href="lab05.html">
+            
+                    
+                    实验五、串联信道容量曲线
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="lab06.html">
+            
+                <a href="lab06.html">
+            
+                    
+                    实验六、Huffman 编码
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="lab07.html">
+            
+                <a href="lab07.html">
+            
+                    
+                    实验七、Hamming 编码
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >实验五、串联信道容量曲线</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-anchor"></i><ul><li><span class="title-icon fa fa-hand-o-right"><a class="on-toolbar-action" aria-label="" href="#">&#x76EE;&#x5F55;</a></span></li><li><span class="title-icon fa fa-hand-o-right"></span><a href="#anchor"><b> </b>&#x5B9E;&#x9A8C;&#x4E94;&#x3001;&#x4E32;&#x8054;&#x4FE1;&#x9053;&#x5BB9;&#x91CF;&#x51FD;&#x6570;&#x66F2;&#x7EBF;&#x7ED8;&#x5236;</a></li><ul><li><span class="title-icon fa fa-hand-o-right"></span><a href="#anchor_1"><b>1. </b>&#x5B9E;&#x9A8C;&#x5185;&#x5BB9;</a></li><li><span class="title-icon fa fa-hand-o-right"></span><a href="#anchor_2"><b>2. </b>&#x5B9E;&#x9A8C;&#x73AF;&#x5883;</a></li><li><span class="title-icon fa fa-hand-o-right"></span><a href="#anchor_3"><b>3. </b>&#x5B9E;&#x9A8C;&#x76EE;&#x7684;</a></li><li><span class="title-icon fa fa-hand-o-right"></span><a href="#anchor_4"><b>4. </b>&#x5B9E;&#x9A8C;&#x8981;&#x6C42;</a></li><li><span class="title-icon fa fa-hand-o-right"></span><a href="#anchor_5"><b>5. </b>&#x5B9E;&#x9A8C;&#x539F;&#x7406;</a></li><li><span class="title-icon fa fa-hand-o-right"></span><a href="#anchor_6"><b>6. </b>&#x5B9E;&#x9A8C;&#x5730;&#x5740;</a></li><li><span class="title-icon fa fa-hand-o-right"></span><a href="#anchor_7"><b>7. </b>&#x5B9E;&#x9A8C;&#x7ED3;&#x679C;</a></li></ul></ul></div><a href="#anchor" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="anchor"><a name="anchor" class="anchor-navigation-ex-anchor" href="#anchor"><i class="fa fa-link" aria-hidden="true"></i></a> &#x5B9E;&#x9A8C;&#x4E94;&#x3001;&#x4E32;&#x8054;&#x4FE1;&#x9053;&#x5BB9;&#x91CF;&#x51FD;&#x6570;&#x66F2;&#x7EBF;&#x7ED8;&#x5236;</h1>
+<h2 id="anchor_1"><a name="anchor_1" class="anchor-navigation-ex-anchor" href="#anchor_1"><i class="fa fa-link" aria-hidden="true"></i></a>1. &#x5B9E;&#x9A8C;&#x5185;&#x5BB9;</h2>
+<p>&#x7528; Excel &#x6216; Matlab &#x5236;&#x4F5C;&#x4E32;&#x8054;&#x4FE1;&#x9053;&#x5BB9;&#x91CF;&#x66F2;&#x7EBF;&#x3002;</p>
+<h2 id="anchor_2"><a name="anchor_2" class="anchor-navigation-ex-anchor" href="#anchor_2"><i class="fa fa-link" aria-hidden="true"></i></a>2. &#x5B9E;&#x9A8C;&#x73AF;&#x5883;</h2>
+<ol>
+<li>&#x8BA1;&#x7B97;&#x673A;</li>
+<li>Windows 2000 &#x6216;&#x4EE5;&#x4E0A;</li>
+<li>Microsoft Office XP &#x6216;&#x4EE5;&#x4E0A;</li>
+<li>Matlab 6.5 &#x6216;&#x4EE5;&#x4E0A;</li>
+</ol>
+<h2 id="anchor_3"><a name="anchor_3" class="anchor-navigation-ex-anchor" href="#anchor_3"><i class="fa fa-link" aria-hidden="true"></i></a>3. &#x5B9E;&#x9A8C;&#x76EE;&#x7684;</h2>
+<ol>
+<li>&#x638C;&#x63E1; Excel &#x7684;&#x6570;&#x636E;&#x586B;&#x5145;&#x3001;&#x516C;&#x5F0F;&#x8FD0;&#x7B97;&#x548C;&#x56FE;&#x8868;&#x5236;&#x4F5C;</li>
+<li>&#x638C;&#x63E1; Matlab &#x7ED8;&#x56FE;&#x51FD;&#x6570;</li>
+<li>&#x638C;&#x63E1;&#x3001;&#x7406;&#x89E3;&#x4E32;&#x8054;&#x4FE1;&#x9053;&#x7684;&#x4FE1;&#x9053;&#x5BB9;&#x91CF;&#x7ED3;&#x8BBA;</li>
+</ol>
+<h2 id="anchor_4"><a name="anchor_4" class="anchor-navigation-ex-anchor" href="#anchor_4"><i class="fa fa-link" aria-hidden="true"></i></a>4. &#x5B9E;&#x9A8C;&#x8981;&#x6C42;</h2>
+<ol>
+<li>&#x63D0;&#x524D;&#x9884;&#x4E60;&#x5B9E;&#x9A8C;&#xFF0C;&#x8BA4;&#x771F;&#x9605;&#x8BFB;&#x5B9E;&#x9A8C;&#x539F;&#x7406;&#x4EE5;&#x53CA;&#x76F8;&#x5E94;&#x7684;&#x53C2;&#x8003;&#x4E66;&#x3002;</li>
+<li>&#x8BA4;&#x771F;&#x9AD8;&#x6548;&#x7684;&#x5B8C;&#x6210;&#x5B9E;&#x9A8C;&#xFF0C;&#x5B9E;&#x9A8C;&#x4E2D;&#x670D;&#x4ECE;&#x5B9E;&#x9A8C;&#x5BA4;&#x7BA1;&#x7406;&#x4EBA;&#x5458;&#x4EE5;&#x53CA;&#x5B9E;&#x9A8C;&#x6307;&#x5BFC;&#x8001;&#x5E08;&#x7684;&#x7BA1;&#x7406;&#x3002;</li>
+<li>&#x8BA4;&#x771F;&#x586B;&#x5199;&#x5B9E;&#x9A8C;&#x62A5;&#x544A;&#x3002;</li>
+</ol>
+<h2 id="anchor_5"><a name="anchor_5" class="anchor-navigation-ex-anchor" href="#anchor_5"><i class="fa fa-link" aria-hidden="true"></i></a>5. &#x5B9E;&#x9A8C;&#x539F;&#x7406;</h2>
+<p>Excel &#x7684;&#x56FE;&#x8868;&#x529F;&#x80FD;&#xFF08;&#x7565;&#xFF09;&#xFF0C;&#x4E32;&#x8054;&#x4FE1;&#x9053;&#x7684;&#x4FE1;&#x9053;&#x5BB9;&#x91CF;&#xFF08;&#x4E0B;&#x56FE;&#xFF09;&#x3002;&#x53C2;&#x8003;&#x300A;&#x4FE1;&#x606F;&#x8BBA;&#x2014;&#x2014;&#x57FA;&#x7840;&#x7406;&#x8BBA;&#x53CA;&#x5E94;&#x7528;&#x300B;&#x7684; 124 &#x9875;&#x3002;</p>
+<p><img src="images/lab05-01.png" alt="&#x4E32;&#x8054;&#x4FE1;&#x9053;&#x7684;&#x4FE1;&#x9053;&#x5BB9;&#x91CF;">
+<img src="images/lab05-02.png" alt="&#x4E32;&#x8054;&#x4FE1;&#x9053;&#x7684;&#x4FE1;&#x9053;&#x5BB9;&#x91CF;">
+<img src="images/lab05-03.png" alt="&#x4E32;&#x8054;&#x4FE1;&#x9053;&#x7684;&#x4FE1;&#x9053;&#x5BB9;&#x91CF;&#xFF0C;&#x738B;&#x9876;&#xFF0C;408542507@qq.com"></p>
+<h2 id="anchor_6"><a name="anchor_6" class="anchor-navigation-ex-anchor" href="#anchor_6"><i class="fa fa-link" aria-hidden="true"></i></a>6. &#x5B9E;&#x9A8C;&#x5730;&#x5740;</h2>
+<ul>
+<li><a href="https://info-lab.wangding.in/labs/lab05.html" target="_blank">&#x4E32;&#x8054;&#x4FE1;&#x9053;&#x5BB9;&#x91CF;&#x66F2;&#x7EBF;&#x7ED8;&#x5236;</a></li>
+</ul>
+<h2 id="anchor_7"><a name="anchor_7" class="anchor-navigation-ex-anchor" href="#anchor_7"><i class="fa fa-link" aria-hidden="true"></i></a>7. &#x5B9E;&#x9A8C;&#x7ED3;&#x679C;</h2>
+<ol>
+<li><p>&#x5728; Excel &#x4E2D;&#x7ED8;&#x5236;&#x7684;&#x51FD;&#x6570;&#x66F2;&#x7EBF;&#x56FE;&#xFF0C;&#x8BF7;&#x53C2;&#x8003;&#x4E0B;&#x56FE;&#x3002;</p>
+<figure id="fig1.6.1"><a href="images/lab05-04.png" data-lightbox="1.6.1"><img src="images/lab05-04.png" alt="Excel &#x7ED8;&#x5236;&#x7684;&#x51FD;&#x6570;&#x66F2;&#x7EBF;&#xFF0C;&#x738B;&#x9876;&#xFF0C;408542507@qq.com"></a><figcaption>&#x56FE;&#xFF1A;Excel &#x7ED8;&#x5236;&#x7684;&#x51FD;&#x6570;&#x66F2;&#x7EBF;&#xFF0C;&#x738B;&#x9876;&#xFF0C;408542507@qq.com</figcaption></figure>
+</li>
+<li><p>&#x5728; Matlab &#x4E2D;&#x7ED8;&#x5236;&#x7684;&#x51FD;&#x6570;&#x66F2;&#x7EBF;&#x56FE;&#xFF0C;&#x8BF7;&#x53C2;&#x8003;&#x4E0B;&#x56FE;&#x3002;</p>
+<figure id="fig1.6.2"><a href="images/lab05-05.png" data-lightbox="1.6.2"><img src="images/lab05-05.png" alt="Matlab &#x7ED8;&#x5236;&#x7684;&#x51FD;&#x6570;&#x66F2;&#x7EBF;&#xFF0C;&#x738B;&#x9876;&#xFF0C;408542507@qq.com"></a><figcaption>&#x56FE;&#xFF1A;Matlab &#x7ED8;&#x5236;&#x7684;&#x51FD;&#x6570;&#x66F2;&#x7EBF;&#xFF0C;&#x738B;&#x9876;&#xFF0C;408542507@qq.com</figcaption></figure>
+</li>
+</ol>
+<footer class="page-footer"><span class="copyright">&#xA9; 2019  &#x738B;&#x9876;. All rights reserved.</span><span class="footer-modification"><span id="busuanzi_container_site_uv" style="display:none">&#x672C;&#x7AD9;&#x8BBF;&#x5BA2;&#x6570; <span id="busuanzi_value_site_uv"></span> &#x4EBA;&#x6B21;</span></span></footer><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+                                
+                                </section>
+                            
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="lab04.html" class="navigation navigation-prev " aria-label="Previous page: 实验四、BSC 信道仿真">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="lab06.html" class="navigation navigation-next " aria-label="Next page: 实验六、Huffman 编码">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"实验五、串联信道容量曲线","level":"1.6","depth":1,"next":{"title":"实验六、Huffman 编码","level":"1.7","depth":1,"path":"lab06.md","ref":"lab06.md","articles":[]},"previous":{"title":"实验四、BSC 信道仿真","level":"1.5","depth":1,"path":"lab04.md","ref":"lab04.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-highlight","-sharing","books","edit-link","sharing-plus","github-buttons@2.1.0"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"books":{"github_url":"https://github.com/wangding/info-theory-lab-manual","prism_themes":"prismjs/themes/prism.css","variable_name":"_pictures"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"github-buttons":{"repo":"wangding/info-theory-lab-manual","types":["star"],"size":"small"},"edit-link":{"label":"编辑本页","base":"https://github.com/wangding/info-theory-lab-manual/blob/master/"},"sharing":{"qq":true,"all":["weibo","douban","qzone","qq"],"douban":true,"facebook":false,"weibo":true,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":true,"linkedin":false},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"fontsettings":{"theme":"white","family":"sans","size":2}},"theme":"default","author":"王顶","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"_pictures":[{"alt":"自信息量函数，王顶，408542507@qq.com","url":"images/lab01-03.png","label":"自信息量函数，王顶，408542507@qq.com","key":"1.2.1","backlink":"lab01.html#fig1.2.1","nro":1,"list_caption":"图：自信息量函数，王顶，408542507@qq.com"},{"alt":"自信息量函数曲线，王顶，408542507@qq.com","url":"images/lab01-01.png","label":"自信息量函数曲线，王顶，408542507@qq.com","key":"1.2.2","backlink":"lab01.html#fig1.2.2","nro":2,"list_caption":"图：自信息量函数曲线，王顶，408542507@qq.com"},{"alt":"自信息量函数曲线，王顶，408542507@qq.com","url":"images/lab01-02.png","label":"自信息量函数曲线，王顶，408542507@qq.com","key":"1.2.3","backlink":"lab01.html#fig1.2.3","nro":3,"list_caption":"图：自信息量函数曲线，王顶，408542507@qq.com"},{"alt":"二进熵函数公式，王顶，408542507@qq.com","url":"images/lab02-04.png","label":"二进熵函数公式，王顶，408542507@qq.com","key":"1.3.1","backlink":"lab02.html#fig1.3.1","nro":4,"list_caption":"图：二进熵函数公式，王顶，408542507@qq.com"},{"alt":"二进熵函数曲线 Excel 绘制，王顶，408542507@qq.com","url":"images/lab02-01.png","label":"二进熵函数曲线 Excel 绘制，王顶，408542507@qq.com","key":"1.3.2","backlink":"lab02.html#fig1.3.2","nro":5,"list_caption":"图：二进熵函数曲线 Excel 绘制，王顶，408542507@qq.com"},{"alt":"二进熵函数曲线 Matlab 绘制，王顶，408542507@qq.com","url":"images/lab02-02.png","label":"二进熵函数曲线 Matlab 绘制，王顶，408542507@qq.com","key":"1.3.3","backlink":"lab02.html#fig1.3.3","nro":6,"list_caption":"图：二进熵函数曲线 Matlab 绘制，王顶，408542507@qq.com"},{"alt":"三进熵函数曲面 Matlab 绘制，王顶，408542507@qq.com","url":"images/lab02-03.png","label":"三进熵函数曲面 Matlab 绘制，王顶，408542507@qq.com","key":"1.3.4","backlink":"lab02.html#fig1.3.4","nro":7,"list_caption":"图：三进熵函数曲面 Matlab 绘制，王顶，408542507@qq.com"},{"alt":"BSC 信道仿真实验结果 1，王顶，408542507@qq.com","url":"images/lab04-01.png","label":"BSC 信道仿真实验结果 1，王顶，408542507@qq.com","key":"1.5.1","backlink":"lab04.html#fig1.5.1","nro":8,"list_caption":"图：BSC 信道仿真实验结果 1，王顶，408542507@qq.com"},{"alt":"BSC 信道仿真实验结果 2，王顶，408542507@qq.com","url":"images/lab04-02.png","label":"BSC 信道仿真实验结果 2，王顶，408542507@qq.com","key":"1.5.2","backlink":"lab04.html#fig1.5.2","nro":9,"list_caption":"图：BSC 信道仿真实验结果 2，王顶，408542507@qq.com"},{"alt":"Excel 绘制的函数曲线，王顶，408542507@qq.com","url":"images/lab05-04.png","label":"Excel 绘制的函数曲线，王顶，408542507@qq.com","key":"1.6.1","backlink":"lab05.html#fig1.6.1","nro":10,"list_caption":"图：Excel 绘制的函数曲线，王顶，408542507@qq.com"},{"alt":"Matlab 绘制的函数曲线，王顶，408542507@qq.com","url":"images/lab05-05.png","label":"Matlab 绘制的函数曲线，王顶，408542507@qq.com","key":"1.6.2","backlink":"lab05.html#fig1.6.2","nro":11,"list_caption":"图：Matlab 绘制的函数曲线，王顶，408542507@qq.com"},{"alt":"(7,4) 汉明码的校验矩阵，王顶，408542507@qq.com","url":"images/lab07-01.png","label":"(7,4) 汉明码的校验矩阵，王顶，408542507@qq.com","key":"1.8.1","backlink":"lab07.html#fig1.8.1","nro":12,"list_caption":"图：(7,4) 汉明码的校验矩阵，王顶，408542507@qq.com"},{"alt":"(8,4) 线性分组码的校验矩阵，王顶，408542507@qq.com","url":"images/lab07-02.png","label":"(8,4) 线性分组码的校验矩阵，王顶，408542507@qq.com","key":"1.8.2","backlink":"lab07.html#fig1.8.2","nro":13,"list_caption":"图：(8,4) 线性分组码的校验矩阵，王顶，408542507@qq.com"},{"alt":"(8,4) 线性分组码的生成矩阵，王顶，408542507@qq.com","url":"images/lab07-01.png","label":"(8,4) 线性分组码的生成矩阵，王顶，408542507@qq.com","key":"1.8.3","backlink":"lab07.html#fig1.8.3","nro":14,"list_caption":"图：(8,4) 线性分组码的生成矩阵，王顶，408542507@qq.com"}]},"title":"实验手册","language":"zh-hans","gitbook":"*","description":"信息科学基础课程实验手册"},"file":{"path":"lab05.md","mtime":"2019-05-14T02:39:33.236Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-05-14T02:40:40.229Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-books/jquery.mark.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-books/bootstrap.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-books/main.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-books/lightbox.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-edit-link/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
